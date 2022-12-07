@@ -30,17 +30,40 @@ class LinkedList {
             return 
         }
 
-        while(i!=ind-1){
+        while(i!=ind-1){ 
             q=q.next
             i++;
         }
         let e=q.next
-        w.next=e
+        w.next=e   
         q.next=w
         this.length++;
         return 
 
+    }
+    dlt(ind){
+        if(ind==0){
+            let a=this.head 
+            this.head=this.head.next
+            a.next=null
+            return 
+        }
+        let i=0;
+        let a=this.head 
+        while(i!=ind-1){
+            a=a.next
+            i++
+        }
+        let z=a.next.next
+        let s=a.next
+        a.next=z
+        s.next=null
 
+
+    }
+    rdisplay(a){
+        console.log(a.data)
+        this.rdisplay(a.next)
     }
     print(){
         let q=this.head
@@ -51,13 +74,14 @@ class LinkedList {
     }
 }
 
-let n=new LinkedList(5)
-n.append(7)
-n.append(2)
-n.append(15)
-n.insert(0,100)
-n.insert(4,10)
-n.insert(6,54)
 
-n.print()
+let arr=[1,2,5,4,7,68]
+let n=new LinkedList(arr[0])
+for(let i=1;i<arr.length;i++){
+    n.append(arr[i])
+}
+
+n.rdisplay(n.head)
+
+// n.print()
 // console.log(n)
