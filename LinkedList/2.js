@@ -61,10 +61,6 @@ class LinkedList {
 
 
     }
-    rdisplay(a){
-        console.log(a.data)
-        this.rdisplay(a.next)
-    }
     print(){
         let q=this.head
         while(q){
@@ -74,14 +70,95 @@ class LinkedList {
     }
 }
 
-
-let arr=[1,2,5,4,7,68]
+let sum=0
+let arr=[1,2,3,4,7,68]
 let n=new LinkedList(arr[0])
+
 for(let i=1;i<arr.length;i++){
     n.append(arr[i])
 }
 
-n.rdisplay(n.head)
+// sum 
+// let x=n.head
+// while(x){
+//     sum+=x.data
+//     x=x.next
+// }
 
-// n.print()
-// console.log(n)
+// console.log(sum)
+
+// max min --->
+// let arr=[1,2,5,4,7,68]
+// let x=n.head
+
+// let min=x.data
+// let max=x.data
+
+// while(x){
+//     if(x.data>max){
+//         max=x.data
+//     }
+//     if(x.data<min){
+//         min=x.data
+//     }
+//     x=x.next
+// }
+// console.log(min,max)
+
+
+// search 
+
+// let arr=[1,2,5,4,7,68]
+
+//       l    m     r
+// let arr=[1,2,5,4,7,68]
+// let n=new LinkedList(arr[0])
+
+// for(let i=1;i<arr.length;i++){
+//     n.append(arr[i])
+// }
+// let target= 4
+// let t=-1
+// let x=n.head
+
+// while(x){
+//     if(x.data==target){
+//         console.log('Found')
+//         t=1
+//         break
+//     }
+//     index++
+//     x=x.next
+// }
+
+// if(t==0){
+//     console.log('Not found')
+// }
+
+
+// check if ll is sorted or not 
+// let arr=[1,2,5,4,7,68]
+let a=n.head
+let b=a.next
+let i=0
+// a b
+// 1 2 5 4 6 7
+
+while(b){
+    if(b.data>=a.data){
+        a=a.next
+        b=b.next
+    }
+    else{
+        console.log('Not sorted')
+        i=1
+        break
+    }
+}
+
+if(i==0){
+    console.log('Sorted')
+}
+
+
+
